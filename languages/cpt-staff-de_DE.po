@@ -1,0 +1,279 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Post Type Staff v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-09-28 09:25:29+0000\n"
+"Last-Translator: horttcore <me@horttcore.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: cpt-staff.php:57
+#@ cpt-staff
+msgid "Information"
+msgstr ""
+
+#: cpt-staff.php:154
+#, php-format
+#@ cpt-staff
+msgid "Staff updated. <a href=\"%s\">View Staff</a>"
+msgstr "Mitarbeiter aktualisiert. <a href=\"%s\">Mitarbeiter ansehen</a>"
+
+#: cpt-staff.php:155
+#@ cpt-staff
+msgid "Custom field updated."
+msgstr "Benutzerdefiniertes Feld aktualisiert"
+
+#: cpt-staff.php:156
+#@ cpt-staff
+msgid "Custom field deleted."
+msgstr "Benutzerdefiniertes Feld gelöscht."
+
+#: cpt-staff.php:157
+#@ cpt-staff
+msgid "Staff updated."
+msgstr "Mitarbeiter aktualisiert"
+
+#. translators: %s: date and time of the revision
+#: cpt-staff.php:159
+#, php-format
+#@ cpt-staff
+msgid "Staff restored to revision from %s"
+msgstr "Mitarbeiter von Revision %s wiederhergestellt"
+
+#: cpt-staff.php:160
+#, php-format
+#@ cpt-staff
+msgid "Staff published. <a href=\"%s\">View Staff</a>"
+msgstr "Mitarbeiter aktualisiert. <a href=\"%s\">Mitarbeiter ansehen</a>"
+
+#: cpt-staff.php:161
+#@ cpt-staff
+msgid "Staff saved."
+msgstr "Mitarbeiter gespeichert."
+
+#: cpt-staff.php:162
+#, php-format
+#@ cpt-staff
+msgid "Staff submitted. <a target=\"_blank\" href=\"%s\">Preview Staff</a>"
+msgstr "Mitarbeiter übertrage. <a target=\"_blank\" href=\"%s\">Vorschau</a>"
+
+#: cpt-staff.php:163
+#, php-format
+#@ cpt-staff
+msgid "Staff scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Staff</a>"
+msgstr "Mitarbeiter für <strong>%1$s</strong> geplant. <a target=\"_blank\" href=\"%2$s\">Vorschau</a>"
+
+#: cpt-staff.php:163
+#@ default
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: cpt-staff.php:164
+#, php-format
+#@ cpt-staff
+msgid "Staff draft updated. <a target=\"_blank\" href=\"%s\">Preview Staff</a>"
+msgstr "Mitarbeiter Entwurf aktualisiert. <a target=\"_blank\" href=\"%s\">Vorschau</a>"
+
+#: cpt-staff.php:183
+#@ cpt-staff
+msgctxt "post type general name"
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: cpt-staff.php:184
+#@ cpt-staff
+msgctxt "post type singular name"
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: cpt-staff.php:185
+#@ cpt-staff
+msgctxt "Staff"
+msgid "Add New"
+msgstr "hinzufügen"
+
+#: cpt-staff.php:186
+#@ cpt-staff
+msgid "Add New Staff"
+msgstr "Mitarbeiter hinzufügen"
+
+#: cpt-staff.php:187
+#@ cpt-staff
+msgid "Edit Staff"
+msgstr "Mitarbeiter bearbeiten"
+
+#: cpt-staff.php:188
+#@ cpt-staff
+msgid "New Staff"
+msgstr "Neuer Mitarbeiter"
+
+#: cpt-staff.php:189
+#@ cpt-staff
+msgid "View Staff"
+msgstr "Mitarbeiter ansehen"
+
+#: cpt-staff.php:190
+#@ cpt-staff
+msgid "Search Staff"
+msgstr "Mitarbeiter suchen"
+
+#: cpt-staff.php:191
+#@ cpt-staff
+msgid "No Staff found"
+msgstr "Kein Mitarbeiter gefunden"
+
+#: cpt-staff.php:192
+#@ cpt-staff
+msgid "No Staff found in Trash"
+msgstr "Kein Mitarbeiter im Papierkorb"
+
+#: cpt-staff.php:194
+#@ cpt-staff
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: cpt-staff.php:204
+#@ cpt-staff
+msgctxt "Post Type Slug"
+msgid "staff"
+msgstr "mitarbeiter"
+
+#: cpt-staff.php:228
+#@ cpt-staff
+msgctxt "taxonomy general name"
+msgid "Divisions"
+msgstr "Abteilungen"
+
+#: cpt-staff.php:229
+#@ cpt-staff
+msgctxt "taxonomy singular name"
+msgid "Division"
+msgstr "Abteilung"
+
+#: cpt-staff.php:230
+#@ cpt-staff
+msgid "Search Divisions"
+msgstr "Abteilung suchen"
+
+#: cpt-staff.php:231
+#@ cpt-staff
+msgid "All Divisions"
+msgstr "Alle Abteilungen"
+
+#: cpt-staff.php:232
+#@ cpt-staff
+msgid "Parent Division"
+msgstr "Übergeordnete Abteilung"
+
+#: cpt-staff.php:233
+#@ cpt-staff
+msgid "Parent Division:"
+msgstr "Übergeordnete Abteilung:"
+
+#: cpt-staff.php:234
+#@ cpt-staff
+msgid "Edit Division"
+msgstr "Abteilung bearbeiten"
+
+#: cpt-staff.php:235
+#@ cpt-staff
+msgid "Update Division"
+msgstr "Abteilung aktualisieren"
+
+#: cpt-staff.php:236
+#@ cpt-staff
+msgid "Add New Division"
+msgstr "Neue Abteilung hinzufügen"
+
+#: cpt-staff.php:237
+#@ cpt-staff
+msgid "New Division Name"
+msgstr "Neuer Abteilungsname"
+
+#: cpt-staff.php:238
+#@ cpt-staff
+msgid "Divisions"
+msgstr "Abteilungen"
+
+#: cpt-staff.php:246
+#@ cpt-staff
+msgctxt "Division Slug"
+msgid "division"
+msgstr "abteilung"
+
+#: cpt-staff.php:73
+#@ default
+msgid "Thumbnail"
+msgstr ""
+
+#: cpt-staff.php:74
+#@ default
+msgid "Title"
+msgstr ""
+
+#: cpt-staff.php:75
+#@ cpt-staff
+msgid "Phone"
+msgstr "Telefon"
+
+#: cpt-staff.php:76
+#@ cpt-staff
+msgid "Mobile"
+msgstr "Mobil"
+
+#: cpt-staff.php:77
+#@ cpt-staff
+msgid "Fax"
+msgstr "Fax"
+
+#: cpt-staff.php:78
+#@ cpt-staff
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: cpt-staff.php:79
+#@ cpt-staff
+msgid "Division"
+msgstr "Abteilung"
+
+#: cpt-staff.php:289
+#: cpt-staff.php:326
+#@ cpt-staff
+msgid "Phone:"
+msgstr "Telefon:"
+
+#: cpt-staff.php:290
+#: cpt-staff.php:330
+#@ cpt-staff
+msgid "Fax:"
+msgstr "Fax:"
+
+#: cpt-staff.php:291
+#: cpt-staff.php:334
+#@ cpt-staff
+msgid "Mobile:"
+msgstr "Mobil:"
+
+#: cpt-staff.php:292
+#: cpt-staff.php:338
+#@ cpt-staff
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: cpt-staff.php:322
+#@ cpt-staff
+msgid "Role:"
+msgstr "Position:"
+
