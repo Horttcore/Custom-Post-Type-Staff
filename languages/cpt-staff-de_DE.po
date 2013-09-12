@@ -1,15 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Post Type Staff v0.1\n"
+"Project-Id-Version: Custom Post Type Staff v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-09-28 09:25:29+0000\n"
+"PO-Revision-Date: 2013-09-12 11:55:43+0000\n"
 "Last-Translator: horttcore <me@horttcore.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -19,261 +20,300 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: cpt-staff.php:57
+#: cpt-staff.php:58
 #@ cpt-staff
 msgid "Information"
-msgstr ""
+msgstr "Informationen"
 
-#: cpt-staff.php:154
-#, php-format
-#@ cpt-staff
-msgid "Staff updated. <a href=\"%s\">View Staff</a>"
-msgstr "Mitarbeiter aktualisiert. <a href=\"%s\">Mitarbeiter ansehen</a>"
-
-#: cpt-staff.php:155
-#@ cpt-staff
+#: cpt-staff.php:162
+#@ default
 msgid "Custom field updated."
 msgstr "Benutzerdefiniertes Feld aktualisiert"
 
-#: cpt-staff.php:156
-#@ cpt-staff
+#: cpt-staff.php:163
+#@ default
 msgid "Custom field deleted."
 msgstr "Benutzerdefiniertes Feld gelöscht."
 
-#: cpt-staff.php:157
+#: cpt-staff.php:164
 #@ cpt-staff
 msgid "Staff updated."
-msgstr "Mitarbeiter aktualisiert"
+msgstr "Mitarbeiter aktualisiert."
 
 #. translators: %s: date and time of the revision
-#: cpt-staff.php:159
+#: cpt-staff.php:166
 #, php-format
 #@ cpt-staff
 msgid "Staff restored to revision from %s"
-msgstr "Mitarbeiter von Revision %s wiederhergestellt"
+msgstr "Mitarbeiter aus Überarbeitung vom %s wiederhergestellt"
 
-#: cpt-staff.php:160
-#, php-format
-#@ cpt-staff
-msgid "Staff published. <a href=\"%s\">View Staff</a>"
-msgstr "Mitarbeiter aktualisiert. <a href=\"%s\">Mitarbeiter ansehen</a>"
-
-#: cpt-staff.php:161
+#: cpt-staff.php:168
 #@ cpt-staff
 msgid "Staff saved."
 msgstr "Mitarbeiter gespeichert."
 
-#: cpt-staff.php:162
-#, php-format
-#@ cpt-staff
-msgid "Staff submitted. <a target=\"_blank\" href=\"%s\">Preview Staff</a>"
-msgstr "Mitarbeiter übertrage. <a target=\"_blank\" href=\"%s\">Vorschau</a>"
-
-#: cpt-staff.php:163
-#, php-format
-#@ cpt-staff
-msgid "Staff scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Staff</a>"
-msgstr "Mitarbeiter für <strong>%1$s</strong> geplant. <a target=\"_blank\" href=\"%2$s\">Vorschau</a>"
-
-#: cpt-staff.php:163
+#: cpt-staff.php:170
 #@ default
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: cpt-staff.php:164
-#, php-format
-#@ cpt-staff
-msgid "Staff draft updated. <a target=\"_blank\" href=\"%s\">Preview Staff</a>"
-msgstr "Mitarbeiter Entwurf aktualisiert. <a target=\"_blank\" href=\"%s\">Vorschau</a>"
-
-#: cpt-staff.php:183
+#: cpt-staff.php:189
 #@ cpt-staff
 msgctxt "post type general name"
 msgid "Staff"
 msgstr "Mitarbeiter"
 
-#: cpt-staff.php:184
+#: cpt-staff.php:190
 #@ cpt-staff
 msgctxt "post type singular name"
 msgid "Staff"
 msgstr "Mitarbeiter"
 
-#: cpt-staff.php:185
+#: cpt-staff.php:191
 #@ cpt-staff
 msgctxt "Staff"
 msgid "Add New"
-msgstr "hinzufügen"
+msgstr "Erstellen"
 
-#: cpt-staff.php:186
+#: cpt-staff.php:192
 #@ cpt-staff
 msgid "Add New Staff"
-msgstr "Mitarbeiter hinzufügen"
+msgstr "Neuen Mitarbeiter erstellen"
 
-#: cpt-staff.php:187
+#: cpt-staff.php:193
 #@ cpt-staff
 msgid "Edit Staff"
 msgstr "Mitarbeiter bearbeiten"
 
-#: cpt-staff.php:188
+#: cpt-staff.php:194
 #@ cpt-staff
 msgid "New Staff"
 msgstr "Neuer Mitarbeiter"
 
-#: cpt-staff.php:189
+#: cpt-staff.php:161
+#: cpt-staff.php:167
+#: cpt-staff.php:195
 #@ cpt-staff
 msgid "View Staff"
 msgstr "Mitarbeiter ansehen"
 
-#: cpt-staff.php:190
+#: cpt-staff.php:196
 #@ cpt-staff
 msgid "Search Staff"
-msgstr "Mitarbeiter suchen"
+msgstr "Mitarbeiter durchsuchen"
 
-#: cpt-staff.php:191
+#: cpt-staff.php:197
 #@ cpt-staff
 msgid "No Staff found"
 msgstr "Kein Mitarbeiter gefunden"
 
-#: cpt-staff.php:192
+#: cpt-staff.php:198
 #@ cpt-staff
 msgid "No Staff found in Trash"
-msgstr "Kein Mitarbeiter im Papierkorb"
+msgstr "Keine Mitarbeiter im Papierkorb gefunden."
 
-#: cpt-staff.php:194
+#: cpt-staff.php:200
 #@ cpt-staff
 msgid "Staff"
 msgstr "Mitarbeiter"
 
-#: cpt-staff.php:204
+#: cpt-staff.php:210
 #@ cpt-staff
 msgctxt "Post Type Slug"
 msgid "staff"
 msgstr "mitarbeiter"
 
-#: cpt-staff.php:228
+#: cpt-staff.php:233
 #@ cpt-staff
 msgctxt "taxonomy general name"
 msgid "Divisions"
 msgstr "Abteilungen"
 
-#: cpt-staff.php:229
+#: cpt-staff.php:234
 #@ cpt-staff
 msgctxt "taxonomy singular name"
 msgid "Division"
 msgstr "Abteilung"
 
-#: cpt-staff.php:230
+#: cpt-staff.php:235
 #@ cpt-staff
 msgid "Search Divisions"
-msgstr "Abteilung suchen"
+msgstr "Abteilungen suchen"
 
-#: cpt-staff.php:231
+#: cpt-staff.php:236
 #@ cpt-staff
 msgid "All Divisions"
 msgstr "Alle Abteilungen"
 
-#: cpt-staff.php:232
+#: cpt-staff.php:237
 #@ cpt-staff
 msgid "Parent Division"
 msgstr "Übergeordnete Abteilung"
 
-#: cpt-staff.php:233
+#: cpt-staff.php:238
 #@ cpt-staff
 msgid "Parent Division:"
 msgstr "Übergeordnete Abteilung:"
 
-#: cpt-staff.php:234
+#: cpt-staff.php:239
 #@ cpt-staff
 msgid "Edit Division"
 msgstr "Abteilung bearbeiten"
 
-#: cpt-staff.php:235
+#: cpt-staff.php:240
 #@ cpt-staff
 msgid "Update Division"
 msgstr "Abteilung aktualisieren"
 
-#: cpt-staff.php:236
+#: cpt-staff.php:241
 #@ cpt-staff
 msgid "Add New Division"
-msgstr "Neue Abteilung hinzufügen"
+msgstr "Neue Abteilung erstellen"
 
-#: cpt-staff.php:237
+#: cpt-staff.php:242
 #@ cpt-staff
 msgid "New Division Name"
 msgstr "Neuer Abteilungsname"
 
-#: cpt-staff.php:238
+#: cpt-staff.php:243
 #@ cpt-staff
 msgid "Divisions"
 msgstr "Abteilungen"
 
-#: cpt-staff.php:246
+#: cpt-staff.php:251
 #@ cpt-staff
 msgctxt "Division Slug"
 msgid "division"
 msgstr "abteilung"
 
-#: cpt-staff.php:73
+#: cpt-staff.php:76
 #@ default
 msgid "Thumbnail"
 msgstr ""
 
-#: cpt-staff.php:74
+#: cpt-staff.php:77
 #@ default
 msgid "Title"
 msgstr ""
 
-#: cpt-staff.php:75
+#: cpt-staff.php:78
 #@ cpt-staff
 msgid "Phone"
 msgstr "Telefon"
 
-#: cpt-staff.php:76
+#: cpt-staff.php:79
 #@ cpt-staff
 msgid "Mobile"
 msgstr "Mobil"
 
-#: cpt-staff.php:77
+#: cpt-staff.php:80
 #@ cpt-staff
 msgid "Fax"
 msgstr "Fax"
 
-#: cpt-staff.php:78
+#: cpt-staff.php:81
 #@ cpt-staff
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: cpt-staff.php:79
+#: cpt-staff.php:82
 #@ cpt-staff
 msgid "Division"
 msgstr "Abteilung"
 
-#: cpt-staff.php:289
-#: cpt-staff.php:326
+#: cpt-staff.php:296
+#: cpt-staff.php:358
 #@ cpt-staff
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: cpt-staff.php:290
-#: cpt-staff.php:330
+#: cpt-staff.php:297
+#: cpt-staff.php:362
 #@ cpt-staff
 msgid "Fax:"
 msgstr "Fax:"
 
-#: cpt-staff.php:291
-#: cpt-staff.php:334
+#: cpt-staff.php:298
+#: cpt-staff.php:366
 #@ cpt-staff
 msgid "Mobile:"
 msgstr "Mobil:"
 
-#: cpt-staff.php:292
-#: cpt-staff.php:338
+#: cpt-staff.php:299
+#: cpt-staff.php:370
 #@ cpt-staff
 msgid "E-Mail:"
 msgstr "E-Mail:"
 
-#: cpt-staff.php:322
+#: cpt-staff.php:354
 #@ cpt-staff
 msgid "Role:"
 msgstr "Position:"
+
+#: cpt-staff.php:342
+#@ cpt-staff
+msgid "Grade:"
+msgstr "Titel:"
+
+#: cpt-staff.php:346
+#@ cpt-staff
+msgid "First name:"
+msgstr "Vorname:"
+
+#: cpt-staff.php:350
+#@ cpt-staff
+msgid "Last name:"
+msgstr "Nachname:"
+
+#: cpt-staff.php:335
+#@ cpt-staff
+msgid "Gender:"
+msgstr "Geschlecht:"
+
+#: cpt-staff.php:161
+#, php-format
+#@ cpt-staff
+msgid "Staff updated. <a href=\"%s\">%s</a>"
+msgstr "Der Mitarbeiter wurde aktualisiert. <a href=\"%s\">%s</a>"
+
+#: cpt-staff.php:167
+#, php-format
+#@ cpt-staff
+msgid "Staff published. <a href=\"%s\">%s</a>"
+msgstr "Mitarbeiter veröffentlicht. <a href=\"%s\">%s</a>"
+
+#: cpt-staff.php:169
+#, php-format
+#@ cpt-staff
+msgid "Staff submitted. <a target=\"_blank\" href=\"%s\">%s</a>"
+msgstr "Mitarbeiter übermittelt. <a target=\"_blank\" href=\"%s\">%s</a>"
+
+#: cpt-staff.php:169
+#: cpt-staff.php:170
+#: cpt-staff.php:171
+#@ cpt-staff
+msgid "Preview Staff"
+msgstr "Mitarbeitervorschau"
+
+#: cpt-staff.php:170
+#, php-format
+#@ cpt-staff
+msgid "Staff scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">%s</a>"
+msgstr "Veröffentlichung geplant für: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">%s</a>"
+
+#: cpt-staff.php:171
+#, php-format
+#@ cpt-staff
+msgid "Staff draft updated. <a target=\"_blank\" href=\"%s\">%s</a>"
+msgstr "Der Mitarbeiterentwurf wurde aktualisiert. <a target=\"_blank\" href=\"%s\">%s</a>"
+
+#: cpt-staff.php:337
+#@ cpt-staff
+msgid "Mr"
+msgstr "Herr"
+
+#: cpt-staff.php:338
+#@ cpt-staff
+msgid "Ms"
+msgstr "Frau"
 

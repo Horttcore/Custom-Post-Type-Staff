@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Custom Post Type Staff
-Plugin URI: http://horttcore.de.de
+Plugin URI: http://horttcore.de
 Description: Custom Post Type Staff
-Version: 0.1
+Version: 1.1
 Author: Ralf Hortt
-Author URI: http://horttcorte.de
+Author URI: http://horttcore.de
 License: GPL2
 */
 
@@ -24,10 +24,11 @@ class Custom_Post_Type_Staff
 	/**
 	 * Plugin constructor
 	 *
-	 * @return void
+	 * @access public
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
-	function __construct()
+	public function __construct()
 	{
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'init', array( $this, 'register_post_type' ) );
@@ -49,7 +50,7 @@ class Custom_Post_Type_Staff
 	 * Register Metaboxes
 	 *
 	 * @access public
-	 * @return void
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function add_meta_boxes()
@@ -63,7 +64,9 @@ class Custom_Post_Type_Staff
 	 * Add custom columns
 	 *
 	 * @access public
-	 * @return void
+	 * @param array $columns Columns
+	 * @return array Columns
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function manage_edit_staff_columns( $columns )
@@ -88,7 +91,9 @@ class Custom_Post_Type_Staff
 	 * Print custom columns
 	 *
 	 * @access public
-	 * @return void
+	 * @param str $column Column name
+	 * @param int $post_id Post ID
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function manage_staff_posts_custom_column( $column, $post_id )
@@ -143,7 +148,9 @@ class Custom_Post_Type_Staff
 	 * Update messages
 	 *
 	 * @access public
-	 * @return void
+	 * @param array $messages Messages
+	 * @return array Messages
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function post_updated_messages( $messages ) {
@@ -151,17 +158,17 @@ class Custom_Post_Type_Staff
 
 		$messages['staff'] = array(
 			0 => '', // Unused. Messages start at index 1.
-			1 => sprintf( __('Staff updated. <a href="%s">View Staff</a>', 'cpt-staff'), esc_url( get_permalink($post_ID) ) ),
-			2 => __('Custom field updated.', 'cpt-staff'),
-			3 => __('Custom field deleted.', 'cpt-staff'),
-			4 => __('Staff updated.', 'cpt-staff'),
+			1 => sprintf( __( 'Staff updated. <a href="%s">%s</a>', 'cpt-staff' ), esc_url( get_permalink($post_ID) ), __( 'View Staff', 'cpt-staff' ) ),
+			2 => __( 'Custom field updated.' ),
+			3 => __( 'Custom field deleted.' ),
+			4 => __( 'Staff updated.', 'cpt-staff' ),
 			/* translators: %s: date and time of the revision */
-			5 => isset($_GET['revision']) ? sprintf( __('Staff restored to revision from %s', 'cpt-staff'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-			6 => sprintf( __('Staff published. <a href="%s">View Staff</a>', 'cpt-staff'), esc_url( get_permalink($post_ID) ) ),
-			7 => __('Staff saved.', 'cpt-staff'),
-			8 => sprintf( __('Staff submitted. <a target="_blank" href="%s">Preview Staff</a>', 'cpt-staff'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-			9 => sprintf( __('Staff scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Staff</a>', 'cpt-staff'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-			10 => sprintf( __('Staff draft updated. <a target="_blank" href="%s">Preview Staff</a>', 'cpt-staff'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+			5 => isset($_GET['revision']) ? sprintf( __( 'Staff restored to revision from %s', 'cpt-staff' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			6 => sprintf( __( 'Staff published. <a href="%s">%s</a>', 'cpt-staff' ), esc_url( get_permalink($post_ID) ), __( 'View Staff', 'cpt-staff' ) ),
+			7 => __( 'Staff saved.', 'cpt-staff' ),
+			8 => sprintf( __( 'Staff submitted. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
+			9 => sprintf( __( 'Staff scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">%s</a>', 'cpt-staff' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ), __( 'Preview Staff', 'cpt-staff' ) ),
+			10 => sprintf( __( 'Staff draft updated. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
 		);
 
 		return $messages;
@@ -170,59 +177,57 @@ class Custom_Post_Type_Staff
 
 
 	/**
-	 *
-	 * POST TYPES
+	 * Register post type
 	 *
 	 * @access public
-	 * @return void
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 */
-	public function register_post_type() 
+	public function register_post_type()
 	{
 		$labels = array(
-			'name' => _x('Staff', 'post type general name', 'cpt-staff'),
-			'singular_name' => _x('Staff', 'post type singular name', 'cpt-staff'),
-			'add_new' => _x('Add New', 'Staff', 'cpt-staff'),
-			'add_new_item' => __('Add New Staff', 'cpt-staff'),
-			'edit_item' => __('Edit Staff', 'cpt-staff'),
-			'new_item' => __('New Staff', 'cpt-staff'),
-			'view_item' => __('View Staff', 'cpt-staff'),
-			'search_items' => __('Search Staff', 'cpt-staff'),
-			'not_found' =>  __('No Staff found', 'cpt-staff'),
-			'not_found_in_trash' => __('No Staff found in Trash', 'cpt-staff'), 
+			'name' => _x( 'Staff', 'post type general name', 'cpt-staff' ),
+			'singular_name' => _x( 'Staff', 'post type singular name', 'cpt-staff' ),
+			'add_new' => _x( 'Add New', 'Staff', 'cpt-staff' ),
+			'add_new_item' => __( 'Add New Staff', 'cpt-staff' ),
+			'edit_item' => __( 'Edit Staff', 'cpt-staff' ),
+			'new_item' => __( 'New Staff', 'cpt-staff' ),
+			'view_item' => __( 'View Staff', 'cpt-staff' ),
+			'search_items' => __( 'Search Staff', 'cpt-staff' ),
+			'not_found' =>  __( 'No Staff found', 'cpt-staff' ),
+			'not_found_in_trash' => __( 'No Staff found in Trash', 'cpt-staff' ),
 			'parent_item_colon' => '',
-			'menu_name' => __('Staff', 'cpt-staff')
+			'menu_name' => __( 'Staff', 'cpt-staff' )
 		);
-		
+
 		$args = array(
 			'labels' => $labels,
 			'public' => true,
 			'publicly_queryable' => true,
-			'show_ui' => true, 
-			'show_in_menu' => true, 
+			'show_ui' => true,
+			'show_in_menu' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => _x('staff', 'Post Type Slug', 'cpt-staff')),
+			'rewrite' => array( 'slug' => _x( 'staff', 'Post Type Slug', 'cpt-staff' )),
 			'capability_type' => 'post',
-			'has_archive' => true, 
-			'hierarchical' => true,
+			'has_archive' => true,
+			'hierarchical' => FALSE,
 			'menu_position' => null,
-			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
-		); 
-		
+			'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
+		);
+
 		register_post_type( 'staff', $args);
 	}
 
 
 
 	/**
-	 *
-	 * CUSTOM TAXONOMY
+	 * Register taxonomy
 	 *
 	 * @access public
-	 * @return void
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 */
-	public function register_taxonomy() 
+	public function register_taxonomy()
 	{
 		$labels = array(
 			'name' => _x( 'Divisions', 'taxonomy general name', 'cpt-staff' ),
@@ -231,19 +236,19 @@ class Custom_Post_Type_Staff
 			'all_items' => __( 'All Divisions', 'cpt-staff' ),
 			'parent_item' => __( 'Parent Division', 'cpt-staff' ),
 			'parent_item_colon' => __( 'Parent Division:', 'cpt-staff' ),
-			'edit_item' => __( 'Edit Division', 'cpt-staff' ), 
+			'edit_item' => __( 'Edit Division', 'cpt-staff' ),
 			'update_item' => __( 'Update Division', 'cpt-staff' ),
 			'add_new_item' => __( 'Add New Division', 'cpt-staff' ),
 			'new_item_name' => __( 'New Division Name', 'cpt-staff' ),
 			'menu_name' => __( 'Divisions', 'cpt-staff' ),
-		); 	
+		);
 
-		register_taxonomy('division',array('staff'), array(
+		register_taxonomy( 'division',array( 'staff' ), array(
 			'hierarchical' => true,
 			'labels' => $labels,
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => _x('division', 'Division Slug', 'cpt-staff') )
+			'rewrite' => array( 'slug' => _x( 'division', 'Division Slug', 'cpt-staff' ) )
 		));
 	}
 
@@ -253,7 +258,9 @@ class Custom_Post_Type_Staff
 	 * Shortcode [STAFF]
 	 *
 	 * @access public
-	 * @return void
+	 * @param array $atts Attributes
+	 * @return str Output
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function shortcode_staff( $atts )
@@ -267,7 +274,7 @@ class Custom_Post_Type_Staff
 		), $atts ));
 
 		$query = new WP_Query( 'post_status=publish&post_type=staff&order=ASC&orderby=menu_order&division=' . $division );
-		
+
 		if ( !$query->have_posts() )
 			return;
 
@@ -306,18 +313,43 @@ class Custom_Post_Type_Staff
 	}
 
 
+
 	/**
-	 * Title Metabox
+	 * Information meta box
 	 *
 	 * @access public
-	 * @return void
+	 * @param obj $post Post object
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function staff_meta( $post )
 	{
-		$meta = get_post_meta( $post->ID, '_staff-meta', TRUE );
+		$meta = apply_filters( 'staff-meta', get_post_meta( $post->ID, '_staff-meta', TRUE ) );
+
+		do_action( 'staff-meta-table-before' );
+
 		?>
 		<table class="form-table">
+			<?php do_action( 'staff-meta-before' ) ?>
+			<tr>
+				<th><label for="staff-gender"><?php _e( 'Gender:', 'cpt-staff' ); ?></label></th>
+				<td>
+					<label><input <?php checked( 'male', $meta['gender'] ) ?> type="radio" value="male" name="staff-gender" id="staff-gender-male"> <?php _e( 'Mr', 'cpt-staff' ); ?></label><br>
+					<label><input <?php checked( 'female', $meta['gender'] ) ?> type="radio" value="female" name="staff-gender" id="staff-gender-female"> <?php _e( 'Ms', 'cpt-staff' ); ?></label>
+				</td>
+			</tr>
+			<tr>
+				<th><label for="staff-grade"><?php _e( 'Grade:', 'cpt-staff' ); ?></label></th>
+				<td><input size="50" type="text" value="<?php echo $meta['grade'] ?>" name="staff-grade" id="staff-grade"></td>
+			</tr>
+			<tr>
+				<th><label for="staff-first-name"><?php _e( 'First name:', 'cpt-staff' ); ?></label></th>
+				<td><input size="50" type="text" value="<?php echo $meta['first-name'] ?>" name="staff-first-name" id="staff-first-name"></td>
+			</tr>
+			<tr>
+				<th><label for="staff-last-name"><?php _e( 'Last name:', 'cpt-staff' ); ?></label></th>
+				<td><input size="50" type="text" value="<?php echo $meta['last-name'] ?>" name="staff-last-name" id="staff-last-name"></td>
+			</tr>
 			<tr>
 				<th><label for="staff-title"><?php _e( 'Role:', 'cpt-staff' ); ?></label></th>
 				<td><input size="50" type="text" value="<?php echo $meta['title'] ?>" name="staff-title" id="staff-title"></td>
@@ -338,8 +370,13 @@ class Custom_Post_Type_Staff
 				<th><label for="staff-email"><?php _e( 'E-Mail:', 'cpt-staff' ); ?></label></th>
 				<td><input size="50" type="text" value="<?php echo $meta['email'] ?>" name="staff-email" id="staff-email"></td>
 			</tr>
+			<?php do_action( 'staff-meta-after' ) ?>
 		</table>
 		<?php
+
+		do_action( 'staff-meta-table-after' );
+
+		wp_nonce_field( 'save-staff-meta', 'staff-meta-nonce' );
 	}
 
 
@@ -348,22 +385,31 @@ class Custom_Post_Type_Staff
 	 * Save Metabox
 	 *
 	 * @access public
-	 * @return void
+	 * @param int $post_id Post ID
+	 * @since 1.0
 	 * @author Ralf Hortt
 	 **/
 	public function staff_save_metabox( $post_id )
 	{
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return;
+
+		if ( !wp_verify_nonce( $_POST['staff-meta-nonce'], 'save-staff-meta' ) )
 			return;
 
 		$meta = array(
-			'title' => $_POST['staff-title'],
-			'phone' => $_POST['staff-phone'],
-			'mobile' => $_POST['staff-mobile'],
-			'fax' => $_POST['staff-fax'],
-			'email' => $_POST['staff-email']
+			'gender' => sanitize_text_field( $_POST['staff-gender'] ),
+			'first-name' => sanitize_text_field( $_POST['staff-first-name'] ),
+			'last-name' => sanitize_text_field( $_POST['staff-last-name'] ),
+			'grade' => sanitize_text_field( $_POST['staff-grade'] ),
+			'grade' => sanitize_text_field( $_POST['staff-grade'] ),
+			'title' => sanitize_text_field( $_POST['staff-title'] ),
+			'phone' => sanitize_text_field( $_POST['staff-phone'] ),
+			'mobile' => sanitize_text_field( $_POST['staff-mobile'] ),
+			'fax' => sanitize_text_field( $_POST['staff-fax'] ),
+			'email' => sanitize_text_field( $_POST['staff-email'] ),
 		);
-		
+
 		if ( 'staff' == $_POST['post_type'] )
 			update_post_meta( $post_id, '_staff-meta', $meta );
 	}
