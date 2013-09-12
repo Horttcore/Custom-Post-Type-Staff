@@ -39,6 +39,7 @@ A custom post type to manage staff
 ### Filters
 
 * `staff-meta` Staff meta is past as array
+* `save-staff-meta` Staff meta is past as array
 
 ## ToDo
 
@@ -46,14 +47,18 @@ A custom post type to manage staff
 
 ## Changelog
 
-#### v1.1
+### v1.1.1
+
+* Add filter `save-staff-meta`
+
+### v1.1
 
 * Added gender
 * Added first name
 * Added last name
 * Cleanup
 
-#### v1.0
+### v1.0
 
 * Initial release
 

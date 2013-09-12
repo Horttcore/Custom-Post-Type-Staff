@@ -3,7 +3,7 @@
 Plugin Name: Custom Post Type Staff
 Plugin URI: http://horttcore.de
 Description: Custom Post Type Staff
-Version: 1.1
+Version: 1.1.1
 Author: Ralf Hortt
 Author URI: http://horttcore.de
 License: GPL2
@@ -411,7 +411,7 @@ class Custom_Post_Type_Staff
 		);
 
 		if ( 'staff' == $_POST['post_type'] )
-			update_post_meta( $post_id, '_staff-meta', $meta );
+			update_post_meta( $post_id, '_staff-meta', apply_filters( 'save-staff-meta', $meta ) );
 	}
 
 
