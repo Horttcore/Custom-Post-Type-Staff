@@ -1,4 +1,4 @@
-# Custom-Post-Type-Staff
+# Custom Post Type Staff
 
 A custom post type to manage staff
 
