@@ -47,6 +47,10 @@ A custom post type to manage staff
 
 ## Changelog
 
+### v1.1.2
+
+* Enhancement: Cleanup
+
 ### v1.1.1
 
 * Add filter `save-staff-meta`

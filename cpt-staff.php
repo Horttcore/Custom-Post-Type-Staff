@@ -2,8 +2,8 @@
 /*
 Plugin Name: Custom Post Type Staff
 Plugin URI: http://horttcore.de
-Description: Custom Post Type Staff
-Version: 1.1.1
+Description: A custom post type for managing staff
+Version: 1.1.2
 Author: Ralf Hortt
 Author URI: http://horttcore.de
 License: GPL2
@@ -30,6 +30,7 @@ class Custom_Post_Type_Staff
 	 **/
 	public function __construct()
 	{
+
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'init', array( $this, 'register_taxonomy' ) );
@@ -42,7 +43,8 @@ class Custom_Post_Type_Staff
 		add_shortcode( 'STAFF', array( $this, 'shortcode_staff' ) );
 
 		load_plugin_textdomain( 'cpt-staff', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'  );
-	}
+
+	} // end __construct
 
 
 
@@ -55,8 +57,10 @@ class Custom_Post_Type_Staff
 	 **/
 	public function add_meta_boxes()
 	{
+
 		add_meta_box( 'staff-meta', __( 'Information', 'cpt-staff' ), array( $this, 'staff_meta' ), 'staff', 'normal' );
-	}
+
+	} // add_meta_boxes
 
 
 
@@ -71,6 +75,7 @@ class Custom_Post_Type_Staff
 	 **/
 	public function manage_edit_staff_columns( $columns )
 	{
+
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
 			'thumbnail' => __( 'Thumbnail' ),
@@ -79,11 +84,11 @@ class Custom_Post_Type_Staff
 			'mobile' => __( 'Mobile', 'cpt-staff' ),
 			'fax' => __( 'Fax', 'cpt-staff' ),
 			'email' => __( 'E-Mail', 'cpt-staff' ),
-			'division' => __( 'Division', 'cpt-staff' )
 		);
 
 		return $columns;
-	}
+
+	} // end manage_edit_staff_columns
 
 
 
@@ -98,13 +103,15 @@ class Custom_Post_Type_Staff
 	 **/
 	public function manage_staff_posts_custom_column( $column, $post_id )
 	{
+
 		global $post;
+
+		$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 
 		switch( $column ) :
 
 			case 'thumbnail' :
-				if ( !has_post_thumbnail( $post_id )) :
-					$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
+				if ( !has_post_thumbnail( $post_id ) ) :
 					echo '<img src="http://www.gravatar.com/avatar/' . md5( $meta['email'] ) . '?d=mm" />';
 				else :
 					echo get_the_post_thumbnail( $post_id, 'thumbnail' );
@@ -112,35 +119,27 @@ class Custom_Post_Type_Staff
 				break;
 
 			case 'phone' :
-				$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 				echo $meta['phone'];
 				break;
 
 			case 'mobile' :
-				$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 				echo $meta['mobile'];
 				break;
 
 			case 'fax' :
-				$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 				echo $meta['fax'];
 				break;
 
 			case 'email' :
-				$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 				echo '<a href="mailto:' . $meta['email'] . '">' . $meta['email'] . '</a>';
-				break;
-
-			case 'division' :
-				$terms = get_the_term_list( $post_id, 'division' );
-				echo strip_tags( $terms );
 				break;
 
 			default :
 				break;
 
 		endswitch;
-	}
+
+	} // manage_staff_posts_custom_column
 
 
 
@@ -154,6 +153,7 @@ class Custom_Post_Type_Staff
 	 * @author Ralf Hortt
 	 **/
 	public function post_updated_messages( $messages ) {
+
 		global $post, $post_ID;
 
 		$messages['staff'] = array(
@@ -166,13 +166,14 @@ class Custom_Post_Type_Staff
 			5 => isset($_GET['revision']) ? sprintf( __( 'Staff restored to revision from %s', 'cpt-staff' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 			6 => sprintf( __( 'Staff published. <a href="%s">%s</a>', 'cpt-staff' ), esc_url( get_permalink($post_ID) ), __( 'View Staff', 'cpt-staff' ) ),
 			7 => __( 'Staff saved.', 'cpt-staff' ),
-			8 => sprintf( __( 'Staff submitted. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
+			8 => sprintf( __( 'Staff submitted. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'TRUE', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
 			9 => sprintf( __( 'Staff scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">%s</a>', 'cpt-staff' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ), __( 'Preview Staff', 'cpt-staff' ) ),
-			10 => sprintf( __( 'Staff draft updated. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
+			10 => sprintf( __( 'Staff draft updated. <a target="_blank" href="%s">%s</a>', 'cpt-staff' ), esc_url( add_query_arg( 'preview', 'TRUE', get_permalink($post_ID) ) ), __( 'Preview Staff', 'cpt-staff' ) ),
 		);
 
 		return $messages;
-	}
+
+	} // end post_updated_messages
 
 
 
@@ -185,6 +186,7 @@ class Custom_Post_Type_Staff
 	 */
 	public function register_post_type()
 	{
+
 		$labels = array(
 			'name' => _x( 'Staff', 'post type general name', 'cpt-staff' ),
 			'singular_name' => _x( 'Staff', 'post type singular name', 'cpt-staff' ),
@@ -202,21 +204,22 @@ class Custom_Post_Type_Staff
 
 		$args = array(
 			'labels' => $labels,
-			'public' => true,
-			'publicly_queryable' => true,
-			'show_ui' => true,
-			'show_in_menu' => true,
-			'query_var' => true,
+			'public' => TRUE,
+			'publicly_queryable' => TRUE,
+			'show_ui' => TRUE,
+			'show_in_menu' => TRUE,
+			'query_var' => TRUE,
 			'rewrite' => array( 'slug' => _x( 'staff', 'Post Type Slug', 'cpt-staff' )),
 			'capability_type' => 'post',
-			'has_archive' => true,
+			'has_archive' => TRUE,
 			'hierarchical' => FALSE,
-			'menu_position' => null,
+			'menu_position' => NULL,
 			'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
 		);
 
 		register_post_type( 'staff', $args);
-	}
+
+	} // end register_post_type
 
 
 
@@ -229,6 +232,7 @@ class Custom_Post_Type_Staff
 	 */
 	public function register_taxonomy()
 	{
+
 		$labels = array(
 			'name' => _x( 'Divisions', 'taxonomy general name', 'cpt-staff' ),
 			'singular_name' => _x( 'Division', 'taxonomy singular name', 'cpt-staff' ),
@@ -244,13 +248,15 @@ class Custom_Post_Type_Staff
 		);
 
 		register_taxonomy( 'division',array( 'staff' ), array(
-			'hierarchical' => true,
+			'hierarchical' => TRUE,
 			'labels' => $labels,
-			'show_ui' => true,
-			'query_var' => true,
+			'show_ui' => TRUE,
+			'show_admin_column' => TRUE,
+			'query_var' => TRUE,
 			'rewrite' => array( 'slug' => _x( 'division', 'Division Slug', 'cpt-staff' ) )
 		));
-	}
+
+	} // end register_taxonomy
 
 
 
@@ -265,9 +271,10 @@ class Custom_Post_Type_Staff
 	 **/
 	public function shortcode_staff( $atts )
 	{
+
 		extract( shortcode_atts( array(
-			'division' => null,
-			'ID' => null,
+			'division' => NULL,
+			'ID' => NULL,
 			'showposts' => -1,
 			'template_file' => FALSE,
 
@@ -310,7 +317,8 @@ class Custom_Post_Type_Staff
 		$output .= '</div><!-- .staff -->';
 
 		return $output;
-	}
+
+	} // end shortcode_staff
 
 
 
@@ -324,13 +332,14 @@ class Custom_Post_Type_Staff
 	 **/
 	public function staff_meta( $post )
 	{
+
 		$meta = apply_filters( 'staff-meta', get_post_meta( $post->ID, '_staff-meta', TRUE ) );
 
-		do_action( 'staff-meta-table-before' );
+		do_action( 'staff-meta-table-before', $post, $meta );
 
 		?>
 		<table class="form-table">
-			<?php do_action( 'staff-meta-before' ) ?>
+			<?php do_action( 'staff-meta-before', $post, $meta ) ?>
 			<tr>
 				<th><label for="staff-gender"><?php _e( 'Gender:', 'cpt-staff' ); ?></label></th>
 				<td>
@@ -370,14 +379,15 @@ class Custom_Post_Type_Staff
 				<th><label for="staff-email"><?php _e( 'E-Mail:', 'cpt-staff' ); ?></label></th>
 				<td><input size="50" type="text" value="<?php echo $meta['email'] ?>" name="staff-email" id="staff-email"></td>
 			</tr>
-			<?php do_action( 'staff-meta-after' ) ?>
+			<?php do_action( 'staff-meta-after', $post, $meta ) ?>
 		</table>
 		<?php
 
-		do_action( 'staff-meta-table-after' );
+		do_action( 'staff-meta-table-after', $post, $meta );
 
 		wp_nonce_field( 'save-staff-meta', 'staff-meta-nonce' );
-	}
+
+	} // end staff_meta
 
 
 
@@ -391,6 +401,7 @@ class Custom_Post_Type_Staff
 	 **/
 	public function staff_save_metabox( $post_id )
 	{
+
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return;
 
@@ -411,11 +422,12 @@ class Custom_Post_Type_Staff
 		);
 
 		if ( 'staff' == $_POST['post_type'] )
-			update_post_meta( $post_id, '_staff-meta', apply_filters( 'save-staff-meta', $meta ) );
-	}
+			update_post_meta( $post_id, '_staff-meta', apply_filters( 'save-staff-meta', $meta, $post_id ) );
+
+	} // end staff_save_metabox
 
 
 
-}
+} // end Custom_Post_Type_Staff
 
 new Custom_Post_Type_Staff;
