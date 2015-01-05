@@ -12,11 +12,11 @@ A custom post type to manage staff
 
 ## Custom Fields
 
-* Gender
+* Salutation
 * Grade
 * First name
 * Last name
-* Position
+* Role
 * Phone
 * Fax
 * Mobil
@@ -41,11 +41,18 @@ A custom post type to manage staff
 * `staff-meta` Staff meta is past as array
 * `save-staff-meta` Staff meta is past as array
 
-## ToDo
+## Template tags
 
-* Template tags
+`get_staff_meta ( str $key [, int $post_id] )`
+`the_staff_meta ( str $key [, int $post_id] )`
 
 ## Changelog
+
+### v2.0
+
+* Refactoring
+* Added template tag `get_staff_meta`
+* Added template tag `the_staff_meta`
 
 ### v1.1.2
 

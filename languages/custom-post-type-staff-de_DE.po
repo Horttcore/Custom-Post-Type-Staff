@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Post Type Staff v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-01-05 16:14:21+0000\n"
+"Last-Translator: horttcore <me@horttcore.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: classes/custom-post-type-staff.admin.php:44
+#@ custom-post-type-staff
+msgid "Information"
+msgstr "Informationen"
+
+#: classes/custom-post-type-staff.admin.php:66
+#@ default
+msgid "Thumbnail"
+msgstr ""
+
+#: classes/custom-post-type-staff.admin.php:67
+#@ default
+msgid "Title"
+msgstr ""
+
+#: classes/custom-post-type-staff.admin.php:71
+#@ custom-post-type-staff
+msgid "Phone"
+msgstr "Telefon"
+
+#: classes/custom-post-type-staff.admin.php:72
+#@ custom-post-type-staff
+msgid "Mobile"
+msgstr "Mobil"
+
+#: classes/custom-post-type-staff.admin.php:73
+#@ custom-post-type-staff
+msgid "Fax"
+msgstr "Fax"
+
+#: classes/custom-post-type-staff.admin.php:74
+#@ custom-post-type-staff
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: classes/custom-post-type-staff.admin.php:75
+#: classes/custom-post-type-staff.php:112
+#@ custom-post-type-staff
+msgid "Divisions"
+msgstr "Abteilungen"
+
+#: classes/custom-post-type-staff.admin.php:76
+#@ default
+msgid "Date"
+msgstr ""
+
+#: classes/custom-post-type-staff.admin.php:154
+#: classes/custom-post-type-staff.admin.php:157
+#@ custom-post-type-staff
+msgid "Staff updated."
+msgstr "Mitarbeiter aktualisiert."
+
+#: classes/custom-post-type-staff.admin.php:155
+#@ custom-post-type-staff
+msgid "Custom field updated."
+msgstr "Benutzerdefiniertes Feld aktualisiert."
+
+#: classes/custom-post-type-staff.admin.php:156
+#@ custom-post-type-staff
+msgid "Custom field deleted."
+msgstr "Benutzerdefiniertes Feld gelöscht."
+
+#. translators: %s: date and time of the revision
+#: classes/custom-post-type-staff.admin.php:159
+#, php-format
+#@ custom-post-type-staff
+msgid "Staff restored to revision from %s"
+msgstr "Mitarbeiter von Revision %s wiederhergestellt"
+
+#: classes/custom-post-type-staff.admin.php:160
+#@ custom-post-type-staff
+msgid "Staff published."
+msgstr "Mitarbeiter veröffentlicht."
+
+#: classes/custom-post-type-staff.admin.php:161
+#@ custom-post-type-staff
+msgid "Staff saved."
+msgstr "Mitarbeiter gespeichert."
+
+#: classes/custom-post-type-staff.admin.php:162
+#@ custom-post-type-staff
+msgid "Staff submitted."
+msgstr "Mitarbeiter zur Vorlage versendet."
+
+#: classes/custom-post-type-staff.admin.php:163
+#, php-format
+#@ custom-post-type-staff
+msgid "Staff scheduled for: <strong>%1$s</strong>."
+msgstr "Mitarbeiter für <strong>%1$s</strong> geplant."
+
+#: classes/custom-post-type-staff.admin.php:163
+#@ custom-post-type-staff
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: classes/custom-post-type-staff.admin.php:164
+#@ custom-post-type-staff
+msgid "Staff draft updated."
+msgstr "Mitarbeiter Entwurf aktualisiert."
+
+#: classes/custom-post-type-staff.admin.php:172
+#@ custom-post-type-staff
+msgid "View staff"
+msgstr "Mitarbeiter ansehen"
+
+#: classes/custom-post-type-staff.admin.php:178
+#@ custom-post-type-staff
+msgid "Preview staff"
+msgstr "Mitarbeiter Vorschau"
+
+#: classes/custom-post-type-staff.admin.php:210
+#@ custom-post-type-staff
+msgid "Salutation:"
+msgstr "Anrede:"
+
+#: classes/custom-post-type-staff.admin.php:212
+#@ custom-post-type-staff
+msgid "Mr"
+msgstr "Herr"
+
+#: classes/custom-post-type-staff.admin.php:213
+#@ custom-post-type-staff
+msgid "Ms"
+msgstr "Frau"
+
+#: classes/custom-post-type-staff.admin.php:217
+#@ custom-post-type-staff
+msgid "Grade:"
+msgstr "Titel"
+
+#: classes/custom-post-type-staff.admin.php:221
+#@ custom-post-type-staff
+msgid "First name:"
+msgstr "Vorname:"
+
+#: classes/custom-post-type-staff.admin.php:225
+#@ custom-post-type-staff
+msgid "Last name:"
+msgstr "Nachname"
+
+#: classes/custom-post-type-staff.admin.php:229
+#@ custom-post-type-staff
+msgid "Role:"
+msgstr "Rolle:"
+
+#: classes/custom-post-type-staff.admin.php:233
+#@ custom-post-type-staff
+msgid "Phone:"
+msgstr "Telefon:"
+
+#: classes/custom-post-type-staff.admin.php:237
+#@ custom-post-type-staff
+msgid "Fax:"
+msgstr "Fax:"
+
+#: classes/custom-post-type-staff.admin.php:241
+#@ custom-post-type-staff
+msgid "Mobile:"
+msgstr "Mobil:"
+
+#: classes/custom-post-type-staff.admin.php:245
+#@ custom-post-type-staff
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: classes/custom-post-type-staff.php:60
+#@ custom-post-type-staff
+msgctxt "post type general name"
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: classes/custom-post-type-staff.php:61
+#@ custom-post-type-staff
+msgctxt "post type singular name"
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: classes/custom-post-type-staff.php:62
+#@ custom-post-type-staff
+msgctxt "Staff"
+msgid "Add New"
+msgstr "Erstellen"
+
+#: classes/custom-post-type-staff.php:63
+#@ custom-post-type-staff
+msgid "Add New Staff"
+msgstr "Mitarbeiter erstellen"
+
+#: classes/custom-post-type-staff.php:64
+#@ custom-post-type-staff
+msgid "Edit Staff"
+msgstr "Mitarbeiter bearbeiten"
+
+#: classes/custom-post-type-staff.php:65
+#@ custom-post-type-staff
+msgid "New Staff"
+msgstr "Neuer Mitarbeiter"
+
+#: classes/custom-post-type-staff.php:66
+#@ custom-post-type-staff
+msgid "View Staff"
+msgstr "Mitarbeiter ansehen"
+
+#: classes/custom-post-type-staff.php:67
+#@ custom-post-type-staff
+msgid "Search Staff"
+msgstr "Mitarbeiter Suchen"
+
+#: classes/custom-post-type-staff.php:68
+#@ custom-post-type-staff
+msgid "No Staff found"
+msgstr "Kein Mitarbeiter gefunden"
+
+#: classes/custom-post-type-staff.php:69
+#@ custom-post-type-staff
+msgid "No Staff found in Trash"
+msgstr "Kein Mitarbeiter im Papierkorb"
+
+#: classes/custom-post-type-staff.php:71
+#@ custom-post-type-staff
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: classes/custom-post-type-staff.php:78
+#@ custom-post-type-staff
+msgctxt "Post Type Slug"
+msgid "staff"
+msgstr "mitarbeiter"
+
+#: classes/custom-post-type-staff.php:102
+#@ custom-post-type-staff
+msgctxt "taxonomy general name"
+msgid "Divisions"
+msgstr "Abteilungen"
+
+#: classes/custom-post-type-staff.php:103
+#@ custom-post-type-staff
+msgctxt "taxonomy singular name"
+msgid "Division"
+msgstr "Abteilung"
+
+#: classes/custom-post-type-staff.php:104
+#@ custom-post-type-staff
+msgid "Search Divisions"
+msgstr "Abteilungen durchsuchen"
+
+#: classes/custom-post-type-staff.php:105
+#@ custom-post-type-staff
+msgid "All Divisions"
+msgstr "Alle Abteilungen"
+
+#: classes/custom-post-type-staff.php:106
+#@ custom-post-type-staff
+msgid "Parent Division"
+msgstr "Übergeordnete Abteilung"
+
+#: classes/custom-post-type-staff.php:107
+#@ custom-post-type-staff
+msgid "Parent Division:"
+msgstr "Übergeordnete Abteilung:"
+
+#: classes/custom-post-type-staff.php:108
+#@ custom-post-type-staff
+msgid "Edit Division"
+msgstr "Abteilung bearbeiten"
+
+#: classes/custom-post-type-staff.php:109
+#@ custom-post-type-staff
+msgid "Update Division"
+msgstr "Abteilung aktualisieren"
+
+#: classes/custom-post-type-staff.php:110
+#@ custom-post-type-staff
+msgid "Add New Division"
+msgstr "Neue Abteilung hinzufügen"
+
+#: classes/custom-post-type-staff.php:111
+#@ custom-post-type-staff
+msgid "New Division Name"
+msgstr "Neuer Abteilungsname"
+
+#: classes/custom-post-type-staff.php:121
+#@ custom-post-type-staff
+msgctxt "Division Slug"
+msgid "division"
+msgstr "abteilung"
+
