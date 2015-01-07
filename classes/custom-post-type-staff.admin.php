@@ -215,35 +215,43 @@ final class Custom_Post_Type_Staff_Admin
 			</tr>
 			<tr>
 				<th><label for="staff-grade"><?php _e( 'Grade:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['grade'] ?>" name="staff-grade" id="staff-grade"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['grade'] ) ?>" name="staff-grade" id="staff-grade"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-first-name"><?php _e( 'First name:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['first-name'] ?>" name="staff-first-name" id="staff-first-name"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['first-name'] ) ?>" name="staff-first-name" id="staff-first-name"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-last-name"><?php _e( 'Last name:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['last-name'] ?>" name="staff-last-name" id="staff-last-name"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['last-name'] ) ?>" name="staff-last-name" id="staff-last-name"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-role"><?php _e( 'Role:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['role'] ?>" name="staff-role" id="staff-role"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['role'] ) ?>" name="staff-role" id="staff-role"></td>
+			</tr>
+			<tr>
+				<th><label for="staff-room"><?php _e( 'Room:', 'custom-post-type-staff' ); ?></label></th>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['room'] ) ?>" name="staff-room" id="staff-room"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-phone"><?php _e( 'Phone:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['phone'] ?>" name="staff-phone" id="staff-phone"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['phone'] ) ?>" name="staff-phone" id="staff-phone"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-fax"><?php _e( 'Fax:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['fax'] ?>" name="staff-fax" id="staff-fax"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['fax'] ) ?>" name="staff-fax" id="staff-fax"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-mobile"><?php _e( 'Mobile:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['mobile'] ?>" name="staff-mobile" id="staff-mobile"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['mobile'] ) ?>" name="staff-mobile" id="staff-mobile"></td>
 			</tr>
 			<tr>
 				<th><label for="staff-email"><?php _e( 'E-Mail:', 'custom-post-type-staff' ); ?></label></th>
-				<td><input size="50" type="text" value="<?php if ( $meta ) echo $meta['email'] ?>" name="staff-email" id="staff-email"></td>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_attr( $meta['email'] ) ?>" name="staff-email" id="staff-email"></td>
+			</tr>
+			<tr>
+				<th><label for="staff-url"><?php _e( 'URL:', 'custom-post-type-staff' ); ?></label></th>
+				<td><input size="50" type="text" value="<?php if ( $meta ) echo esc_url( $meta['url'] ) ?>" name="staff-url" id="staff-url"></td>
 			</tr>
 
 			<?php do_action( 'staff-meta-after', $post, $meta ) ?>
@@ -283,11 +291,12 @@ final class Custom_Post_Type_Staff_Admin
 			'last-name' => sanitize_text_field( $_POST['staff-last-name'] ),
 			'grade' => sanitize_text_field( $_POST['staff-grade'] ),
 			'role' => sanitize_text_field( $_POST['staff-role'] ),
-			'title' => sanitize_text_field( $_POST['staff-title'] ),
+			'room' => sanitize_text_field( $_POST['staff-room'] ),
 			'phone' => sanitize_text_field( $_POST['staff-phone'] ),
 			'mobile' => sanitize_text_field( $_POST['staff-mobile'] ),
 			'fax' => sanitize_text_field( $_POST['staff-fax'] ),
 			'email' => sanitize_text_field( $_POST['staff-email'] ),
+			'url' => sanitize_url( $_POST['staff-url'] ),
 		);
 
 		update_post_meta( $post_id, '_staff-meta', apply_filters( 'save-staff-meta', $meta, $post_id ) );

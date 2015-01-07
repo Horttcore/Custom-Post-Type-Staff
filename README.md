@@ -45,8 +45,16 @@ A custom post type to manage staff
 
 `get_staff_meta ( str $key [, int $post_id] )`
 `the_staff_meta ( str $key [, int $post_id] )`
+`hast_staff_meta ( str $key [, int $post_id] )`
 
 ## Changelog
+
+### v2.0.1
+
+* Template tags fixed
+* Added `has_staff_meta` template tag
+* Added `room` field
+* Added `url` field
 
 ### v2.0
 

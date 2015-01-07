@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Post Type Staff v1.0\n"
+"Project-Id-Version: Custom Post Type Staff v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-01-05 16:14:21+0000\n"
+"PO-Revision-Date: 2015-01-07 11:22:06+0000\n"
 "Last-Translator: horttcore <me@horttcore.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -165,22 +165,22 @@ msgstr "Nachname"
 msgid "Role:"
 msgstr "Rolle:"
 
-#: classes/custom-post-type-staff.admin.php:233
+#: classes/custom-post-type-staff.admin.php:237
 #@ custom-post-type-staff
 msgid "Phone:"
 msgstr "Telefon:"
 
-#: classes/custom-post-type-staff.admin.php:237
+#: classes/custom-post-type-staff.admin.php:241
 #@ custom-post-type-staff
 msgid "Fax:"
 msgstr "Fax:"
 
-#: classes/custom-post-type-staff.admin.php:241
+#: classes/custom-post-type-staff.admin.php:245
 #@ custom-post-type-staff
 msgid "Mobile:"
 msgstr "Mobil:"
 
-#: classes/custom-post-type-staff.admin.php:245
+#: classes/custom-post-type-staff.admin.php:249
 #@ custom-post-type-staff
 msgid "E-Mail:"
 msgstr "E-Mail:"
@@ -306,4 +306,14 @@ msgstr "Neuer Abteilungsname"
 msgctxt "Division Slug"
 msgid "division"
 msgstr "abteilung"
+
+#: classes/custom-post-type-staff.admin.php:233
+#@ custom-post-type-staff
+msgid "Room:"
+msgstr "Raum:"
+
+#: classes/custom-post-type-staff.admin.php:253
+#@ custom-post-type-staff
+msgid "URL:"
+msgstr "URL:"
 
