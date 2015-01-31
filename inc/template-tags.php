@@ -15,7 +15,7 @@ function get_staff_meta( $key, $post_id = FALSE )
 
 	$meta = get_post_meta( $post_id, '_staff-meta', TRUE );
 
-	if ( !$meta || !isset( $meta[$key] ) || '' === $meta['key'] )
+	if ( !$meta || !isset( $meta[$key] ) || '' === $meta[$key] )
 		return FALSE;
 
 	return $meta[$key];

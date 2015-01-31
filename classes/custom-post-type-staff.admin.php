@@ -146,10 +146,10 @@ final class Custom_Post_Type_Staff_Admin
 	{
 
 		$post             = get_post();
-		$post_type        = get_post_type( $post );
+		$post_type        = 'staff';
 		$post_type_object = get_post_type_object( $post_type );
 
-		$messages['staff'] = array(
+		$messages[$post_type] = array(
 			0  => '', // Unused. Messages start at index 1.
 			1  => __( 'Staff updated.', 'custom-post-type-staff' ),
 			2  => __( 'Custom field updated.', 'custom-post-type-staff' ),
@@ -170,14 +170,14 @@ final class Custom_Post_Type_Staff_Admin
 		$permalink = get_permalink( $post->ID );
 
 		$view_link = sprintf( ' <a href="%s">%s</a>', esc_url( $permalink ), __( 'View staff', 'custom-post-type-staff' ) );
-		$messages[ $post_type ][1] .= $view_link;
-		$messages[ $post_type ][6] .= $view_link;
-		$messages[ $post_type ][9] .= $view_link;
+		$messages[$post_type][1] .= $view_link;
+		$messages[$post_type][6] .= $view_link;
+		$messages[$post_type][9] .= $view_link;
 
 		$preview_permalink = add_query_arg( 'preview', 'true', $permalink );
 		$preview_link = sprintf( ' <a target="_blank" href="%s">%s</a>', esc_url( $preview_permalink ), __( 'Preview staff', 'custom-post-type-staff' ) );
-		$messages[ $post_type ][8]  .= $preview_link;
-		$messages[ $post_type ][10] .= $preview_link;
+		$messages[$post_type][8]  .= $preview_link;
+		$messages[$post_type][10] .= $preview_link;
 
 		return $messages;
 
@@ -282,7 +282,7 @@ final class Custom_Post_Type_Staff_Admin
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return;
 
-		if ( !wp_verify_nonce( $_POST['staff-meta-nonce'], 'save-staff-meta' ) )
+		if ( !isset( $_POST['staff-meta-nonce'] ) || !wp_verify_nonce( $_POST['staff-meta-nonce'], 'save-staff-meta' ) )
 			return;
 
 		$meta = array(
