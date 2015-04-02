@@ -21,6 +21,8 @@ A custom post type to manage staff
 * Fax
 * Mobil
 * E-Mail
+* URL
+* Room
 
 ## Language Support
 
