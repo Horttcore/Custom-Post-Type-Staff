@@ -3,7 +3,7 @@
 Plugin Name: Custom Post Type Staff
 Plugin URI: http://horttcore.de
 Description: A custom post type for managing staff
-Version: 2.0.1
+Version: 2.0.2
 Author: Ralf Hortt
 Author URI: http://horttcore.de
 License: GPL2
