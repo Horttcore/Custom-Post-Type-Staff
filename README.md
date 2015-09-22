@@ -51,6 +51,11 @@ A custom post type to manage staff
 
 ## Changelog
 
+### v2.0.2
+
+* Fixed: `Replaced sanitize_url` with `esc_url_raw`
+* Fixed: Salutation warning on `save_post`
+
 ### v2.0.1
 
 * Template tags fixed
