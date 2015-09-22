@@ -286,7 +286,7 @@ final class Custom_Post_Type_Staff_Admin
 			return;
 
 		$meta = array(
-			'salutation' => sanitize_text_field( $_POST['staff-salutation'] ),
+			'salutation' => ( isset( $_POST['staff-salutation'] ) ) ? sanitize_text_field( $_POST['staff-salutation'] ) : '',
 			'first-name' => sanitize_text_field( $_POST['staff-first-name'] ),
 			'last-name' => sanitize_text_field( $_POST['staff-last-name'] ),
 			'grade' => sanitize_text_field( $_POST['staff-grade'] ),
@@ -296,7 +296,7 @@ final class Custom_Post_Type_Staff_Admin
 			'mobile' => sanitize_text_field( $_POST['staff-mobile'] ),
 			'fax' => sanitize_text_field( $_POST['staff-fax'] ),
 			'email' => sanitize_text_field( $_POST['staff-email'] ),
-			'url' => sanitize_url( $_POST['staff-url'] ),
+			'url' => esc_url_raw( $_POST['staff-url'] ),
 		);
 
 		update_post_meta( $post_id, '_staff-meta', apply_filters( 'save-staff-meta', $meta, $post_id ) );
