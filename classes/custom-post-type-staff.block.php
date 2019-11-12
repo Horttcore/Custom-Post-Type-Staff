@@ -44,6 +44,15 @@ class StaffBlock
             'showposts' => $attributes['postsToShow'] ?? get_option('posts_per_page'),
         ]);
 
+        if($attributes['staffId']) {
+            $query = new \WP_Query([
+                'post_type' => 'staff',
+                'page_id'   => $attributes['staffId'],
+                'orderby'   => $attributes['orderBy'] ?? 'menu_order',
+                'order'     => $attributes['order'] ?? 'ASC',
+            ]);
+        }
+
         if ($query->have_posts()) :
 
             require apply_filters('custom-post-type-staff-loop-template', plugin_dir_path(__FILE__).'../views/loop.php', $query, $attributes);
