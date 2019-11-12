@@ -2,7 +2,8 @@
  * Internal block libraries
  */
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+const { registerBlockType, InspectorControls } = wp.blocks;
+
 import edit from './edit';
 
 registerBlockType("horttcore/staff", {
@@ -27,6 +28,9 @@ registerBlockType("horttcore/staff", {
         postsToShow: {
             type: 'number',
             default: 10,
+        },
+        staffId: {
+            type: 'string',
         },
     },
     supports: {
