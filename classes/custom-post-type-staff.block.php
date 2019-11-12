@@ -44,7 +44,7 @@ class StaffBlock
             'showposts' => $attributes['postsToShow'] ?? get_option('posts_per_page'),
         ]);
 
-        if($attributes['staffId']) {
+        if ($attributes['staffId']) {
             $query = new \WP_Query([
                 'post_type' => 'staff',
                 'page_id'   => $attributes['staffId'],
