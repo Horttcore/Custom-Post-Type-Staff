@@ -91,13 +91,14 @@ final class Custom_Post_Type_Staff_Admin
 
         $meta = get_post_meta($post_id, '_staff-meta', true);
 
-        switch ($column) :
+        switch ($column) {
 
             case 'thumbnail':
-                if (!has_post_thumbnail($post_id)) :
-                    echo '<img src="http://www.gravatar.com/avatar/'.md5($meta['email']).'?d=mm" />'; else :
+                if (!has_post_thumbnail($post_id)) {
+                    echo '<img src="http://www.gravatar.com/avatar/'.md5($meta['email']).'?d=mm" />';
+                } else {
                     echo get_the_post_thumbnail($post_id, 'thumbnail');
-        endif;
+                }
         break;
 
         case 'phone':
@@ -119,7 +120,7 @@ final class Custom_Post_Type_Staff_Admin
         default:
                 break;
 
-        endswitch;
+        }
     }
 
     // END manage_staff_posts_custom_column

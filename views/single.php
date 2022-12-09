@@ -1,10 +1,10 @@
 <aside <?php post_class() ?>>
 
-    <?php if (has_post_thumbnail()) : ?>
+    <?php if (has_post_thumbnail()) { ?>
         <figure class="staff__image">
             <?php the_post_thumbnail(apply_filters('custom-post-type-staff-image-size', 'thumbnail'), ['class' => 'staff__image__img']); ?>
         </figure>
-    <?php endif ?>
+    <?php } ?>
 
     <div class="staff__wrapper">
 
@@ -14,16 +14,16 @@
         </header>
         
         <div class="staff__content">
-            <?php if (has_staff_meta('phone')) : ?>
+            <?php if (has_staff_meta('phone')) { ?>
                 <a href="<?php the_staff_meta('phone', 'tel:')?>">
                     <?php the_staff_meta('phone', '<div class="staff__phone">', '</div>') ?>
                 </a>
-            <?php endif ?>
-            <?php if (has_staff_meta('role')) : ?>
+            <?php } ?>
+            <?php if (has_staff_meta('role')) { ?>
                 <a href="<?php the_staff_meta('email', 'mailto:')?>">
                     <?php the_staff_meta('email', '<div class="staff__email">', '</div>') ?>
                 </a>
-            <?php endif ?>
+            <?php } ?>
         </div>
 
     </div>
